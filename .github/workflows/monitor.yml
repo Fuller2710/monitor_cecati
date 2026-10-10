@@ -45,7 +45,7 @@ jobs:
                   "api_key": os.getenv("CALLMEBOT_API_KEY", "")
               },
               "desktop_notification": {
-                  "enabled": false
+                  "enabled": False
               }
           }
           with open("config.json", "w", encoding="utf-8") as f:
