@@ -1,0 +1,86 @@
+name: CECATI 95 Course Monitor
+
+on:
+  schedule:
+    # Ejecutar todos los días a las 14:00 UTC (08:00 AM hora México Centro)
+    - cron: '0 14 * * *'
+    # Ejecutar también a las 20:00 UTC (02:00 PM hora México Centro)
+    - cron: '0 20 * * *'
+  workflow_dispatch: # Permite ejecutar manualmente desde GitHub
+
+jobs:
+  check-courses:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Configurar archivo config.json con Secretos
+        run: |
+          python -c '
+          import json, os
+
+          cfg = {
+              "url": "https://sites.google.com/view/cecati95inscripciones/inicio/cursos-s%C3%A1bados",
+              "telegram": {
+                  "enabled": bool(os.getenv("TELEGRAM_BOT_TOKEN")),
+                  "bot_token": os.getenv("TELEGRAM_BOT_TOKEN", ""),
+                  "chat_id": os.getenv("TELEGRAM_CHAT_ID", "")
+              },
+              "discord": {
+                  "enabled": bool(os.getenv("DISCORD_WEBHOOK_URL")),
+                  "webhook_url": os.getenv("DISCORD_WEBHOOK_URL", "")
+              },
+              "whatsapp_callmebot": {
+                  "enabled": bool(os.getenv("CALLMEBOT_API_KEY")),
+                  "phone_number": os.getenv("CALLMEBOT_PHONE", ""),
+                  "api_key": os.getenv("CALLMEBOT_API_KEY", "")
+              },
+              "desktop_notification": {
+                  "enabled": false
+              }
+          }
+          with open("config.json", "w", encoding="utf-8") as f:
+              json.dump(cfg, f, indent=4)
+          '
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          CALLMEBOT_PHONE: ${{ secrets.CALLMEBOT_PHONE }}
+          CALLMEBOT_API_KEY: ${{ secrets.CALLMEBOT_API_KEY }}
+
+      - name: Ejecutar Monitor de Cursos
+        run: python monitor_cecati.py --check-now
+
+      - name: Crear Notificación en GitHub (Issue) si se abrieron cursos
+        if: always()
+        run: |
+          if [ -f "opened_courses.md" ]; then
+            echo "¡Se detectaron cursos abiertos! Creando Issue en GitHub..."
+            gh issue create \
+              --title "🚨 ¡Cursos Abiertos en CECATI 95! 🚨" \
+              --body-file opened_courses.md \
+              --assignee "${{ github.repository_owner }}"
+            rm -f opened_courses.md
+          else
+            echo "No hay cursos nuevos abiertos."
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Guardar estado actualizado en el repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add courses_state.json
+          git commit -m "Auto: Actualizar estado de cursos [skip ci]" || echo "Sin cambios en el estado"
+          git push || echo "No se requirio push"

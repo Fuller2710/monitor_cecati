@@ -1,0 +1,30 @@
+{
+    "url": "https://sites.google.com/view/cecati95inscripciones/inicio/cursos-s%C3%A1bados",
+    "check_interval_seconds": 3600,
+    "notify_on_every_check": false,
+    "telegram": {
+        "enabled": true,
+        "bot_token": "123456789:ABCdefGhIJKlmNoPQRstuVWXyz",
+        "chat_id": "987654321"
+    },
+    "discord": {
+        "enabled": false,
+        "webhook_url": "https://discord.com/api/webhooks/..."
+    },
+    "whatsapp_callmebot": {
+        "enabled": false,
+        "phone_number": "+5219931234567",
+        "api_key": "123456"
+    },
+    "email": {
+        "enabled": false,
+        "smtp_server": "smtp.gmail.com",
+        "smtp_port": 587,
+        "sender_email": "tu_correo@gmail.com",
+        "sender_password": "tu_app_password",
+        "recipient_email": "destinatario@gmail.com"
+    },
+    "desktop_notification": {
+        "enabled": true
+    }
+}

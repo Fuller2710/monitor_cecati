@@ -1,0 +1,96 @@
+{
+    "last_checked": "2026-10-09T18:17:16.462970",
+    "courses": {
+        "Instalaciones Eléctricas Residenciales Básicas (Sábados de 8 a 13)": {
+            "nombre": "Instalaciones Eléctricas Residenciales Básicas",
+            "horario": "Sábados de 8 a 13",
+            "estado": "Cerrado",
+            "disponible": false,
+            "enlaces": []
+        },
+        "Mantenimiento Preventivo a Motores Eléctricos (Sábados de 13 a 18)": {
+            "nombre": "Mantenimiento Preventivo a Motores Eléctricos",
+            "horario": "Sábados de 13 a 18",
+            "estado": "Cerrado",
+            "disponible": false,
+            "enlaces": []
+        },
+        "Reparación de Refrigeradores (Sábados de 8 a 13)": {
+            "nombre": "Reparación de Refrigeradores",
+            "horario": "Sábados de 8 a 13",
+            "estado": "Cerrado",
+            "disponible": false,
+            "enlaces": []
+        },
+        "Mantenimiento de Equipos de Aire Acondicionado Tipo Minisplit (Sábados de 13 a 18)": {
+            "nombre": "Mantenimiento de Equipos de Aire Acondicionado Tipo Minisplit",
+            "horario": "Sábados de 13 a 18",
+            "estado": "Cerrado",
+            "disponible": false,
+            "enlaces": []
+        },
+        "Mantenimiento Preventivo de Vehículos (Sábados de 8 a 13)": {
+            "nombre": "Mantenimiento Preventivo de Vehículos",
+            "horario": "Sábados de 8 a 13",
+            "estado": "Cerrado",
+            "disponible": false,
+            "enlaces": []
+        },
+        "Conocimientos Básicos de Costura (Sábados de 8 a 13)": {
+            "nombre": "Conocimientos Básicos de Costura",
+            "horario": "Sábados de 8 a 13",
+            "estado": "Cerrado",
+            "disponible": false,
+            "enlaces": []
+        },
+        "Pantalón para Caballero (Sábados de 13 a 17)": {
+            "nombre": "Pantalón para Caballero",
+            "horario": "Sábados de 13 a 17",
+            "estado": "Cerrado",
+            "disponible": false,
+            "enlaces": []
+        },
+        "Inglés Básico I (Sábados de 8 a 13)": {
+            "nombre": "Inglés Básico I",
+            "horario": "Sábados de 8 a 13",
+            "estado": "Cerrado",
+            "disponible": false,
+            "enlaces": []
+        },
+        "Inglés Básico I (Sábados de 13 a 18)": {
+            "nombre": "Inglés Básico I",
+            "horario": "Sábados de 13 a 18",
+            "estado": "Cerrado",
+            "disponible": false,
+            "enlaces": []
+        },
+        "Inglés Preintermedio I (Sábados de 8 a 13)": {
+            "nombre": "Inglés Preintermedio I",
+            "horario": "Sábados de 8 a 13",
+            "estado": "Cerrado",
+            "disponible": false,
+            "enlaces": []
+        },
+        "Herramientas Digitales Básicas (Sábados de 8 a 13)": {
+            "nombre": "Herramientas Digitales Básicas",
+            "horario": "Sábados de 8 a 13",
+            "estado": "Cerrado",
+            "disponible": false,
+            "enlaces": []
+        },
+        "Excel Básico (Sábados de 13 a 18)": {
+            "nombre": "Excel Básico",
+            "horario": "Sábados de 13 a 18",
+            "estado": "Cerrado",
+            "disponible": false,
+            "enlaces": []
+        },
+        "Contabilidad Básica (Sábados de 8 a 13)": {
+            "nombre": "Contabilidad Básica",
+            "horario": "Sábados de 8 a 13",
+            "estado": "Cerrado",
+            "disponible": false,
+            "enlaces": []
+        }
+    }
+}
