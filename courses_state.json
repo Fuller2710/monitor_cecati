@@ -1,5 +1,5 @@
 {
-    "last_checked": "2026-10-19T23:30:03.210609",
+    "last_checked": "2026-10-20T18:24:15.202791",
     "courses": {
         "Mantenimiento Preventivo a Motores Eléctricos (Sábados de 8 a 13)": {
             "nombre": "Mantenimiento Preventivo a Motores Eléctricos",
@@ -67,6 +67,13 @@
         "Inglés Preintermedio II (Sábados de 8 a 13)": {
             "nombre": "Inglés Preintermedio II",
             "horario": "Sábados de 8 a 13",
+            "estado": "Cerrado",
+            "disponible": false,
+            "enlaces": []
+        },
+        "Inglés Básico I (Sábados de)": {
+            "nombre": "Inglés Básico I",
+            "horario": "Sábados de",
             "estado": "Cerrado",
             "disponible": false,
             "enlaces": []
